@@ -14,9 +14,9 @@ class App : RComponent<RProps, RState>() {
             }
         }
         p("App-intro") {
-            +"To get started, edit "
+            +"To get started, edit this "
             code { +"app/App.kt" }
-            +" and save to reload."
+            +" file and save to reload."
         }
         p("App-ticker") {
             ticker()
