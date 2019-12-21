@@ -4,6 +4,7 @@ import react.*
 import react.dom.*
 import logo.*
 import ticker.*
+import list.*
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
@@ -20,6 +21,9 @@ class App : RComponent<RProps, RState>() {
         }
         p("App-ticker") {
             ticker()
+        }
+        div("Listview") {
+            list(height=240)
         }
         p("test-p") {
             +"Put test messsage"
