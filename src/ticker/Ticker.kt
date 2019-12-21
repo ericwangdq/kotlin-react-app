@@ -24,9 +24,11 @@ class Ticker(props: TickerProps) : RComponent<TickerProps, TickerState>(props) {
             // actually, the operation is performed on a state's copy, so it stays effectively immutable
             setState { secondsElapsed += 1 }
         }, 1000)
+        println("Ticker componentDidMount ${timerID}");
     }
 
     override fun componentWillUnmount() {
+        println("Ticker componentWillUnmount ${timerID}");
         window.clearInterval(timerID!!)
     }
 

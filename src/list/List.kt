@@ -24,11 +24,11 @@ class List(props: ListProps) : RComponent<ListProps, ListState>(props) {
     // var count: Int? = null
 
     override fun componentDidMount() {
-        // window.console.log("Listview componentDidMount");
+        println("Listview componentDidMount");
     }
 
     override fun componentWillUnmount() {
-      // window.console.log("Listview componentWillUnmount");
+        println("Listview componentWillUnmount");
         // window.clearInterval(timerID!!)
     }
 
