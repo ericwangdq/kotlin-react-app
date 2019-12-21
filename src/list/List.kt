@@ -8,11 +8,42 @@ import kotlinx.html.style
 @JsModule("src/logo/kotlin.svg")
 external val kotlinLogo: dynamic
 
+interface ListProps : RProps {
+    var initalListCount: Int
+}
+
+interface ListState : RState {
+    var modifiedListCount: Int
+}
+
+class List(props: ListProps) : RComponent<ListProps, ListState>(props) {
+    override fun ListState.init(props: ListProps) {
+        modifiedListCount = props.initalListCount
+    }
+
+    // var count: Int? = null
+
+    override fun componentDidMount() {
+        // window.console.log("Listview componentDidMount");
+    }
+
+    override fun componentWillUnmount() {
+      // window.console.log("Listview componentWillUnmount");
+        // window.clearInterval(timerID!!)
+    }
+
+    override fun RBuilder.render() {
+        +"This app has been running for  seconds."
+    }
+}
+
+
 fun RBuilder.list(height: Int = 100) {
+
     p("listview-contrainer") {
         attrs.jsStyle.height = height
         span(classes = "listview-msg"){
-            +"List view component "
+            +"Listview component, edit this"
             code { +"list/List.kt" }
             +" file and save to reload."
         }
