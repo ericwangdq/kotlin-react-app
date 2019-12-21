@@ -1,4 +1,4 @@
-# Kotlin for React Demo
+# Kotlin for React demo
 
 Frist try on Kotlin language with JSX and component of React.
 
