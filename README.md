@@ -1,4 +1,6 @@
-# kotlin-react-app
+# Kotlin for React Demo
+
+Frist try on Kotlin language with JSX and component of React.
 
 This project was bootstrapped with [Create React Kotlin App](https://github.com/JetBrains/create-react-kotlin-app).
 
