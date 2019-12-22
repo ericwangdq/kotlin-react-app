@@ -24,7 +24,8 @@ class List(props: ListProps) : RComponent<ListProps, ListState>(props) {
     // var count: Int? = null
 
     override fun componentDidMount() {
-        println("Listview componentDidMount");
+        println("Listview componentDidMount, Prop: ${props.initalListCount}, State ${state.modifiedListCount}");
+        setState { modifiedListCount += 100 }
     }
 
     override fun componentWillUnmount() {
@@ -38,8 +39,8 @@ class List(props: ListProps) : RComponent<ListProps, ListState>(props) {
 }
 
 
-fun RBuilder.list(height: Int = 100) {
-
+fun RBuilder.list(height: Int = 100) = child(List::class) {
+    attrs.initalListCount = height;
     p("listview-contrainer") {
         attrs.jsStyle.height = height
         span(classes = "listview-msg"){
