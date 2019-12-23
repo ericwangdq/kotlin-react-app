@@ -34,17 +34,12 @@ class List(props: ListProps) : RComponent<ListProps, ListState>(props) {
     }
 
     override fun RBuilder.render() {
-        +"This app has been running for  seconds."
-    }
-}
-
-
-fun RBuilder.list(height: Int = 100) = child(List::class) {
-    attrs.initalListCount = height;
-    p("listview-contrainer") {
-        attrs.jsStyle.height = height
+        +"Prop list count ${props.initalListCount}. "
+        +"State list count modified ${state.modifiedListCount}."
+        p("listview-contrainer") {
+        attrs.jsStyle.height = props.initalListCount
         span(classes = "listview-msg"){
-            +"Listview component, edit this"
+            +"Listview component, edit this "
             code { +"list/List.kt" }
             +" file and save to reload."
         }
@@ -52,4 +47,10 @@ fun RBuilder.list(height: Int = 100) = child(List::class) {
            img(alt = "Kotlin image message", src = kotlinLogo, classes = "img-kotlin") {}
         }
     }
+    }
+}
+
+
+fun RBuilder.list(height: Int = 100) = child(List::class) {
+    attrs.initalListCount = height;
 }
