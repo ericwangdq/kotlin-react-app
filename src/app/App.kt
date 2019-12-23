@@ -2,16 +2,20 @@ package app
 
 import react.*
 import react.dom.*
+import react.router.dom.*
 import logo.*
 import ticker.*
 import list.*
+import sidebar.*
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
+        // sidebar()
+
         div("App-header") {
             logo()
             h2 {
-                +"Welcome to React with Kotlin, Hello from Eric"
+                +"Welcome to React with Kotlin, Greetings!"
             }
         }
         p("App-intro") {
@@ -27,6 +31,22 @@ class App : RComponent<RProps, RState>() {
         }
         p("test-p") {
             +"Put test messsage"
+        }
+
+        browserRouter { // "browserRouter" or "hashRouter"
+            switch {
+                route("/", exact = true)  {
+                    p{
+                        +"Home Screen for closure function"
+                    }
+                }
+                route("/redux", List::class, exact = true)
+                route("/test") {
+                    p{
+                        +"Test Screen for closure function"
+                    }
+                }
+            }
         }
     }
 }
