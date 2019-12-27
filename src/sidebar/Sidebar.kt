@@ -5,7 +5,7 @@ import react.dom.*
 import react.router.dom.*
 
 fun RBuilder.sidebar() {
-    div("sidebar"){
+    div("sidebar navigation"){
         routeLink("/"){
             +"Home"
         }

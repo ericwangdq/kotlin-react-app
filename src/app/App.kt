@@ -10,6 +10,7 @@ import sidebar.*
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
+     
         div("wrapper") {
              div("App-header") {
                 logo()
@@ -18,7 +19,7 @@ class App : RComponent<RProps, RState>() {
                 }
             }
            browserRouter { // "browserRouter" or "hashRouter"
-                 sidebar()
+                sidebar()
                 switch {
                     route("/", exact = true)  {
                         p{
