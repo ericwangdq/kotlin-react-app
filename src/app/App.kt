@@ -10,44 +10,54 @@ import sidebar.*
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        // sidebar()
-
-        div("App-header") {
-            logo()
-            h2 {
-                +"Welcome to React with Kotlin, Greetings from Eric!"
-            }
-        }
-        p("App-intro") {
-            +"To get started, edit this "
-            code { +"app/App.kt" }
-            +" file and save to reload."
-        }
-        p("App-ticker") {
-            ticker()
-        }
-        div("Listview") {
-            list(height=240)
-        }
-        p("test-p") {
-            +"Put test messsage"
-        }
-
-        browserRouter { // "browserRouter" or "hashRouter"
-            switch {
-                route("/", exact = true)  {
-                    p{
-                        +"Home Screen for closure function"
-                    }
+        div("wrapper") {
+             div("App-header") {
+                logo()
+                h2 {
+                    +"Welcome to React with Kotlin, Greetings!"
                 }
-                route("/redux", List::class, exact = true)
-                route("/test") {
-                    p{
-                        +"Test Screen for closure function"
+            }
+           browserRouter { // "browserRouter" or "hashRouter"
+                 sidebar()
+                switch {
+                    route("/", exact = true)  {
+                        p{
+                            h1{
+                                +"Home router"
+                            }
+                            +"Home Screen for closure function"
+                        }
+                    }
+                    route("/list", List::class, exact = true)
+                    route("/test") {
+                        div("Listview") {
+                            h1{
+                                +"Test router"
+                            }
+                            list(height=240)
+                        }
                     }
                 }
             }
+           
+            p("App-intro") {
+                +"To get started, edit this "
+                code { +"app/App.kt" }
+                +" file and save to reload."
+            }
+            p("App-ticker") {
+                ticker()
+            }
+            // div("Listview") {
+            //     list(height=240)
+            // }
+            p("test-p") {
+                +"Put test messsage"
+            }
+
         }
+
+
     }
 }
 

@@ -9,8 +9,14 @@ fun RBuilder.sidebar() {
         routeLink("/"){
             +"Home"
         }
-        routeLink("/redux"){
-            +"Redux"
+        span {
+            +" | "
+        }
+        routeLink("/list"){
+            +"List"
+        }
+        span {
+            +" | "
         }
         routeLink("/test"){
             +"Test"
