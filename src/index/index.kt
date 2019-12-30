@@ -8,7 +8,7 @@ import kotlin.browser.*
 fun main(args: Array<String>) {
     requireAll(require.context("src", true, js("/\\.css$/")))
 
-    render(document.getElementById("root")) {
+    render(document.getElementById("kotlin-content")) {
         app()
     }
 }
