@@ -12,8 +12,8 @@ fun RBuilder.sidebar() {
         span {
             +" | "
         }
-        routeLink("/list"){
-            +"List"
+        routeLink("/kotlin"){
+            +"Kotlin List"
         }
         span {
             +" | "

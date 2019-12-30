@@ -29,7 +29,7 @@ class App : RComponent<RProps, RState>() {
                             +"Home Screen for closure function"
                         }
                     }
-                    route("/list", List::class, exact = true)
+                    route("/kotlin", List::class, exact = true)
                     route("/test") {
                         div("Listview") {
                             h1{
